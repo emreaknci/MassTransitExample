@@ -16,5 +16,6 @@ namespace Shared
         public const string BasketServiceQueueName = "basket.service";
         public const string CatalogServiceQueueName = "catalog.service";
         public const string PaymentServiceQueueName = "payment.service";
+        public const string NotificationServiceQueueName = "notification.service";
     }
 }

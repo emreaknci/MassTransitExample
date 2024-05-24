@@ -21,7 +21,7 @@ namespace BasketService.Controllers
             _bus = bus.GetSendEndpoint(sendToUri).Result;
         }
 
-        [HttpPost]
+        [HttpPost("checkout")]
         public async Task<IActionResult> Post()
         {
             var randomId = new Random().Next(1, 100);
