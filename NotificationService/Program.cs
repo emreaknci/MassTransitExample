@@ -1,6 +1,6 @@
 ﻿using MassTransit;
+using NotificationService.Consumers;
 using Shared;
-using Shared.Consumers.NotificationService;
 
 var bus = BusConfigurator.ConfigureBus(configuration =>
 {

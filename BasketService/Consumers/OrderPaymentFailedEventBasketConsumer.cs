@@ -1,12 +1,7 @@
 ﻿using MassTransit;
 using Shared.Events;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
-namespace Shared.Consumers.BasketService
+namespace BasketService.Consumers
 {
     public class OrderPaymentFailedEventBasketConsumer : IConsumer<IOrderPaymentFailed>
     {

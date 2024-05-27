@@ -1,6 +1,6 @@
 ﻿using MassTransit;
 using Shared;
-using Shared.Consumers.OrderService;
+using OrderService.Consumers;
 
 var bus = BusConfigurator.ConfigureBus(configuration =>
 {

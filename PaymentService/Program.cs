@@ -1,6 +1,6 @@
 ﻿using MassTransit;
 using Shared;
-using Shared.Consumers.PaymentService;
+using PaymentService.Consumers;
 
 var bus = BusConfigurator.ConfigureBus(configuration =>
 {

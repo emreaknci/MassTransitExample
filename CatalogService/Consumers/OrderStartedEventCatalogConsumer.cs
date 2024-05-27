@@ -6,7 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Shared.Consumers.CatalogService
+namespace CatalogService.Consumers
 {
     public class OrderStartedEventCatalogConsumer : IConsumer<IOrderStartedEvent>
     {

@@ -1,7 +1,7 @@
 ﻿using MassTransit;
 using Shared.Events;
 
-namespace Shared.Consumers.BasketService
+namespace BasketService.Consumers
 {
     public class OrderPaymentSucceededEventBasketConsumer : IConsumer<IOrderPaymentSucceeded>
     {

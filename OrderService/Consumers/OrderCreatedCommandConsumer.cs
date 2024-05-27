@@ -1,13 +1,8 @@
 ﻿using MassTransit;
 using Shared.Commands;
 using Shared.Events;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
-namespace Shared.Consumers.OrderService
+namespace OrderService.Consumers
 {
     public class OrderCreatedCommandConsumer : IConsumer<IOrderCreatedCommand>
     {

@@ -1,6 +1,6 @@
 using MassTransit;
 using Shared;
-using Shared.Consumers.BasketService;
+using BasketService.Consumers;
 
 var builder = WebApplication.CreateBuilder(args);
 
