@@ -3,9 +3,9 @@ using Shared.Events;
 
 namespace CatalogService.Consumers
 {
-    public class OrderPaymentFailedEventCatalogConsumer : IConsumer<IOrderPaymentFailed>
+    public class OrderPaymentFailedEventCatalogConsumer : IConsumer<OrderPaymentFailed>
     {
-        public Task Consume(ConsumeContext<IOrderPaymentFailed> context)
+        public Task Consume(ConsumeContext<OrderPaymentFailed> context)
         {
             Console.WriteLine("\n" + context.Message.OrderId + " siparişinin ödemesi başarısız oldu. Stok tekrar güncelleniyor");
             foreach (var item in context.Message.Items)

@@ -8,11 +8,11 @@ using System.Threading.Tasks;
 
 namespace PaymentService.Consumers
 {
-    public class OrderStartedEventPaymentConsumer : IConsumer<IOrderStartedEvent>
+    public class OrderStartedEventPaymentConsumer : IConsumer<OrderStartedEvent>
     {
 
 
-        public async Task Consume(ConsumeContext<IOrderStartedEvent> context)
+        public async Task Consume(ConsumeContext<OrderStartedEvent> context)
         {
             var message = context.Message;
             var success = new Random().Next(0, 2) == 1;
@@ -21,13 +21,13 @@ namespace PaymentService.Consumers
             await SendPaymentStatus(context, success);
         }
 
-        public async Task SendPaymentStatus(ConsumeContext<IOrderStartedEvent> context, bool success)
+        public async Task SendPaymentStatus(ConsumeContext<OrderStartedEvent> context, bool success)
         {
             Console.WriteLine($"Payment for order with id {context.Message.OrderId} was {(success ? "successful" : "unsuccessful")}\n");
 
             if (success)
             {
-                IOrderPaymentSucceeded succeeded = new OrderPaymentSucceeded()
+                var succeeded = new OrderPaymentSucceeded()
                 {
                     OrderId = context.Message.OrderId
                 };
@@ -36,12 +36,12 @@ namespace PaymentService.Consumers
 
             else
             {
-                Dictionary<string, int> items = new Dictionary<string, int>();
+                Dictionary<int, int> items = new Dictionary<int, int>();
                 foreach (var item in context.Message.Items)
                 {
                     items.Add(item.Key, item.Value);
                 }
-                IOrderPaymentFailed failed = new OrderPaymentFailed()
+                OrderPaymentFailed failed = new OrderPaymentFailed()
                 {
                     OrderId = context.Message.OrderId,
                     Items = items

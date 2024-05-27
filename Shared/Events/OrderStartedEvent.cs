@@ -6,12 +6,12 @@ using System.Threading.Tasks;
 
 namespace Shared.Events
 {
-    public interface IOrderStartedEvent
+    public class OrderStartedEvent
     {
-        int OrderId { get; }
-        bool Succeeded { get; }
+        public int OrderId { get; set; }
+        public bool Succeeded { get; set; }
 
-        public Dictionary<string, int> Items { get; set; } // ProductName, Quantity
+        public Dictionary<int, int> Items { get; set; } // Id, Quantity
 
     }
 

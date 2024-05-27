@@ -8,9 +8,9 @@ using System.Threading.Tasks;
 
 namespace OrderService.Consumers
 {
-    public class OrderPaymentSucceededEventOrderConsumer : IConsumer<IOrderPaymentSucceeded>
+    public class OrderPaymentSucceededEventOrderConsumer : IConsumer<OrderPaymentSucceeded>
     {
-        public async Task Consume(ConsumeContext<IOrderPaymentSucceeded> context)
+        public async Task Consume(ConsumeContext<OrderPaymentSucceeded> context)
         {
             Console.WriteLine($"Order payment succeeded: {context.Message.OrderId}\n");
 

@@ -1,5 +1,4 @@
-﻿using BasketService.Models;
-using MassTransit;
+﻿using MassTransit;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Shared;
@@ -26,7 +25,7 @@ namespace BasketService.Controllers
         {
             var randomId = new Random().Next(1, 100);
 
-            OrderCreated orderCreated = new()
+            var orderCreated = new OrderCreatedCommand()
             {
                 OrderId = randomId,
                 Items = new List<BasketItem>
@@ -46,7 +45,7 @@ namespace BasketService.Controllers
                 }
             };
 
-            await _bus.Send<IOrderCreatedCommand>(orderCreated);
+            await _bus.Send<OrderCreatedCommand>(orderCreated);
 
             return Ok("Order created successfully.");
         }

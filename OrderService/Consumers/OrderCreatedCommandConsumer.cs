@@ -4,9 +4,9 @@ using Shared.Events;
 
 namespace OrderService.Consumers
 {
-    public class OrderCreatedCommandConsumer : IConsumer<IOrderCreatedCommand>
+    public class OrderCreatedCommandConsumer : IConsumer<OrderCreatedCommand>
     {
-        public async Task Consume(ConsumeContext<IOrderCreatedCommand> context)
+        public async Task Consume(ConsumeContext<OrderCreatedCommand> context)
         {
             var message = context.Message;
 
@@ -21,7 +21,7 @@ namespace OrderService.Consumers
                 dicItems.Add(item.Id, item.Units);
             }
 
-            await context.Publish<IOrderStartedEvent>(new
+            await context.Publish<OrderStartedEvent>(new OrderStartedEvent()
             {
                 OrderId = message.OrderId,
                 Items = dicItems,

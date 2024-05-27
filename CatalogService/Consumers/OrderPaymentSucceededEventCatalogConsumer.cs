@@ -3,9 +3,9 @@ using Shared.Events;
 
 namespace CatalogService.Consumers
 {
-    public class OrderPaymentSucceededEventCatalogConsumer : IConsumer<IOrderPaymentSucceeded>
+    public class OrderPaymentSucceededEventCatalogConsumer : IConsumer<OrderPaymentSucceeded>
     {
-        public Task Consume(ConsumeContext<IOrderPaymentSucceeded> context)
+        public Task Consume(ConsumeContext<OrderPaymentSucceeded> context)
         {
             Console.WriteLine("\n" + context.Message.OrderId + "siparişinin ödemesi alındı");
 

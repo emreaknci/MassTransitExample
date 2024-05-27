@@ -8,9 +8,9 @@ using System.Threading.Tasks;
 
 namespace CatalogService.Consumers
 {
-    public class OrderStartedEventCatalogConsumer : IConsumer<IOrderStartedEvent>
+    public class OrderStartedEventCatalogConsumer : IConsumer<OrderStartedEvent>
     {
-        public Task Consume(ConsumeContext<IOrderStartedEvent> context)
+        public Task Consume(ConsumeContext<OrderStartedEvent> context)
         {
             var message = context.Message;
 

@@ -8,9 +8,9 @@ using System.Threading.Tasks;
 
 namespace NotificationService.Consumers
 {
-    public class OrderPaymentSucceededEventNotificationConsumer : IConsumer<IOrderPaymentSucceeded>
+    public class OrderPaymentSucceededEventNotificationConsumer : IConsumer<OrderPaymentSucceeded>
     {
-        public Task Consume(ConsumeContext<IOrderPaymentSucceeded> context)
+        public Task Consume(ConsumeContext<OrderPaymentSucceeded> context)
         {
             var message = context.Message;
             Console.WriteLine($"${message.OrderId} li siparişin ödemesi başarıyla alınmıştır. Siparişiniz en kısa sürede kargoya verilecektir.");

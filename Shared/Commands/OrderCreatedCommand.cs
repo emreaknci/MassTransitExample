@@ -7,11 +7,11 @@ using System.Threading.Tasks;
 
 namespace Shared.Commands
 {
-    public interface IOrderCreatedCommand
+    public class OrderCreatedCommand
     {
-        int OrderId { get; }
+        public int OrderId { get; set; }
 
-        List<BasketItem> Items { get; }
+        public List<BasketItem> Items { get; set; }
 
     }
 }
